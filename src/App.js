@@ -1,13 +1,24 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Button } from 'reactstrap';
+import { connect, sendMsg } from "./api";
 import './App.css';
 
 class WeddingButton extends React.Component {
+  constructor(props) {
+    super(props);
+    connect();
+  }
+  
+  send() {
+    console.log("hello");
+    sendMsg("hello");
+  }
+
   render() {
     return (
       <div className="kp_container">
-        <Button outline size="lg" color="info" onClick={() => alert('welcome to our wedding website')}>
+        <Button outline size="lg" color="info" onClick={this.send}>
           Wedding Website
         </Button>
       </div>
