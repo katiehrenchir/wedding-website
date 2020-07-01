@@ -13,7 +13,7 @@ class WeddingSite extends React.Component {
   render() {
     return (
       <div className="kp_container">
-        {this.BannerPhoto()}
+        {/* {this.BannerPhoto()} */}
         <Button outline size="lg" color="info" onClick={() => alert('welcome to our wedding website')}>
           Wedding Website
         </Button>
