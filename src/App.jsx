@@ -1,23 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Button } from 'reactstrap';
-import bannerphoto from './static/banner-photo.jpg';
+import { Button, Image } from 'react-bootstrap';
 import './App.css';
 
 class WeddingSite extends React.Component {
 
-  BannerPhoto() {
-    return <img src={bannerphoto} alt="Paper Sun Photography" />;
-  }
 
   render() {
     return (
+      <React.Fragment>
+
+      <Image src={require("./static/banner-photo.jpg")} fluid />
+
       <div className="kp_container">
-        {/* {this.BannerPhoto()} */}
-        <Button outline size="lg" color="info" onClick={() => alert('welcome to our wedding website')}>
+        <Button outline size="lg" variant="success" onClick={() => alert('welcome to our wedding website')}>
           Wedding Website
         </Button>
       </div>
+      </React.Fragment>
     );
   }
 }
@@ -25,11 +25,8 @@ class WeddingSite extends React.Component {
 // ========================================
 
 ReactDOM.render(
-<div style={{
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-}}>
+  <div>
+    <hr/>
     <WeddingSite />
   </div>,
   document.getElementById('root')
